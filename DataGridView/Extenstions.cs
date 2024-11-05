@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Standart.Contracts.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -82,12 +83,12 @@ namespace DataGridView
             }
             return description;
         }
-        public static bool ValidateApplicant<T>(this T nail)
+        public static bool ValidateApplicant<T>(this T applicant)
       where T : ValidatableApplicant
         {
-            var context = new ValidationContext(nail, serviceProvider: null, items: null);
+            var context = new ValidationContext(applicant, serviceProvider: null, items: null);
             var results = new List<ValidationResult>();
-            return Validator.TryValidateObject(nail, context, results, true);
+            return Validator.TryValidateObject(applicant, context, results, true);
         }
     }
 }

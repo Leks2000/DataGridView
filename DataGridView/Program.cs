@@ -1,11 +1,15 @@
-﻿using Manager;
+﻿using DataGridView.Forms;
+using DataGridView.Standart.Manager;
+using DataGridView.Standart.Memory;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Windows.Forms;
 
+
+
 namespace DataGridView
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -22,7 +26,7 @@ namespace DataGridView
             var storage = new MemoryApplicantStorage();
             var manager = new ApplicantManager(storage, logger);
 
-            Application.Run(new ApplicantDataForm());
+            Application.Run(new ApplicantDataForm(manager));
         }
     }
 }

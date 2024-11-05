@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridView.Standart.Manag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridView.Standart.Contracts", "Contracts\DataGridView.Standart.Contracts.csproj", "{0D216C25-178C-4ACD-B5D8-03B16AB454A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memory", "DataGridView.Memory\Memory.csproj", "{051D0585-E30A-4F59-A588-58E15B914944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView.Standart.Memory", "DataGridView.Memory\DataGridView.Standart.Memory.csproj", "{051D0585-E30A-4F59-A588-58E15B914944}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

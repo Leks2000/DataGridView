@@ -1,10 +1,10 @@
-﻿using Library.Contracts.Models;
+﻿using DataGridView.Standart.Contracts.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace DataGridView
+namespace DataGridView.Forms
 {
     public partial class ApplicationForm : Form
     {

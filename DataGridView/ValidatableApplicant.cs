@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Library.Contracts.Models;
 using System;
 
-namespace DataGridView
+namespace DataGridView.Standart.Contracts.Models
 {
 
     /// <summary>
@@ -21,7 +20,7 @@ namespace DataGridView
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Название - строка от 3 до 50 символов")]
         public string Name { get; set; }
         /// <summary>
-        /// <inheritdoc cref="Library.Contracts.Models.Gender"/>
+        /// <inheritdoc cref="Standart.Models.Gender"/>
         /// </summary>
         [Required(ErrorMessage = "Выбирите ваш пол")]
         public Gender Gender { get; set; }
@@ -33,7 +32,7 @@ namespace DataGridView
         public DateTime Birthday { get; set; }
 
         /// <summary>
-        /// <inheritdoc cref="Library.Contracts.Models.Education"/>
+        /// <inheritdoc cref="Models"/>
         /// </summary>
         [Required(ErrorMessage = "Выбирите формат обучения")]
         public Education Education { get; set; }

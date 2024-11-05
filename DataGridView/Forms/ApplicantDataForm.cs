@@ -1,17 +1,18 @@
-﻿using Library.Contracts.Interfaces;
-using Library.Contracts.Models;
+﻿using DataGridView.Standart.Contracts.Interfaces;
+using DataGridView.Standart.Contracts.Models;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DataGridView
+namespace DataGridView.Forms
 {
     public partial class ApplicantDataForm : Form
     {
         private readonly IApplicantManager applicantManager;
         private readonly BindingSource bindingSource;
-        public ApplicantDataForm()
+        public ApplicantDataForm(IApplicantManager manager)
         {
+            applicantManager = manager;
             bindingSource = new BindingSource();
 
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace DataGridView
             var applicantsForm = new ApplicationForm();
             if (applicantsForm.ShowDialog(this) == DialogResult.OK)
             {
-                await applicantManager.AddAsync(Convert.ToValidateApplicant(applicantsForm.ValidateApplicant));
+                await applicantManager.AddAsync(ValidateConvert.ToValidateApplicant(applicantsForm.ValidateApplicant));
                 await SetStatus();
             }
         }
@@ -35,6 +36,8 @@ namespace DataGridView
             toolStripStatusLabel1.Text = $"Всего абитуриентов: {result.Count}";
             toolStripStatusLabel2.Text = $"Ж {result.FemaleCount} /М {result.MaleCount}";
             toolStripStatusLabel3.Text = $"Студенты, набравшие больше 150 баллов в сумме: {result.TotalScoreCount}";
+            toolStripStatusLabel4.Text = $"Очный {result.FullTimeCount} / Oчно-Заочный {result.FullTimePartTimeCount} / Заочный {result.СorrespondenceCount}";
+
         }
 
         private async void toolStripBtn_Edit_Click(object sender, EventArgs e)
@@ -42,10 +45,10 @@ namespace DataGridView
             if (dataGridView.SelectedRows.Count != 0)
             {
                 var data = GetSelectedApplication();
-                var applicantsForm = new ApplicationForm(Convert.ToApplicant(data));
+                var applicantsForm = new ApplicationForm(ValidateConvert.ToApplicant(data));
                 if (applicantsForm.ShowDialog(this) == DialogResult.OK)
                 {
-                    await applicantManager.EditAsync(Convert.ToValidateApplicant(applicantsForm.ValidateApplicant));
+                    await applicantManager.EditAsync(ValidateConvert.ToValidateApplicant(applicantsForm.ValidateApplicant));
                     await SetStatus();
                 }
             }
@@ -66,6 +69,12 @@ namespace DataGridView
                     await SetStatus();
                 }
             }
+        }
+
+        private async void ApplicantDataForm_Load(object sender, EventArgs e)
+        {
+            bindingSource.DataSource = await applicantManager.GetAllAsync();
+            await SetStatus();
         }
     }
 }

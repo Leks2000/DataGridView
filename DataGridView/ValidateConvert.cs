@@ -1,11 +1,11 @@
-﻿using Library.Contracts.Models;
+﻿using DataGridView.Standart.Contracts.Models;
 
 namespace DataGridView
 {
     /// <summary>
     /// Класс для приведения одного типа к другому
     /// </summary>
-    public static class Convert
+    public static class ValidateConvert
     {
         /// <summary>
         /// Привести <see cref="Applicant"/> к <see cref="ValidatableApplicant"/>

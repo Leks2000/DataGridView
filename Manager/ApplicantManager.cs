@@ -3,8 +3,10 @@ using DataGridView.Standart.Contracts.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
-using Microsoft.Build.Framework;
 using System.Diagnostics;
+using Microsoft.Extensions.Logging;
+using DataGridView.Standart.Manager.Models;
+using System.Linq;
 
 
 namespace DataGridView.Standart.Manager
@@ -138,7 +140,7 @@ namespace DataGridView.Standart.Manager
                     MaleCount = result.Where(x => x.Gender == Gender.Male).Count(),
                     FemaleCount = result.Where(x => x.Gender == Gender.Female).Count(),
                     FullTimeCount = result.Where(x => x.Education == Education.FullTime).Count(),
-                    FTPTCount = result.Where(x => x.Education == Education.FTPT).Count(),
+                    FullTimePartTimeCount = result.Where(x => x.Education == Education.FullTimePartTime).Count(),
                     СorrespondenceCount = result.Where(x => x.Education == Education.Сorrespondence).Count(),
                     TotalScoreCount = result.Where(x => x.TotalScore >= 150).Count(),
                 };

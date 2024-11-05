@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Debug.8.0.1\lib\net462\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
     </Reference>
@@ -60,6 +63,7 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
@@ -86,7 +90,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -98,7 +101,7 @@
     <Compile Include="Forms\ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Convert.cs" />
+    <Compile Include="ValidateConvert.cs" />
     <Compile Include="Forms\ApplicantDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contracts\DataGridView.Standart.Contracts.csproj">
-      <Project>{0D216C25-178C-4ACD-B5D8-03B16AB454A8}</Project>
+      <Project>{0d216c25-178c-4acd-b5d8-03b16ab454a8}</Project>
       <Name>DataGridView.Standart.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataGridView.Memory\DataGridView.Standart.Memory.csproj">
+      <Project>{051D0585-E30A-4F59-A588-58E15B914944}</Project>
+      <Name>DataGridView.Standart.Memory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Manager\DataGridView.Standart.Manager.csproj">
-      <Project>{4EFA4DFD-50FF-4F7B-BED0-772A2655500A}</Project>
+      <Project>{4efa4dfd-50ff-4f7b-bed0-772a2655500a}</Project>
       <Name>DataGridView.Standart.Manager</Name>
     </ProjectReference>
   </ItemGroup>

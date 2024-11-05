@@ -1,4 +1,4 @@
-﻿namespace DataGridView
+﻿namespace DataGridView.Forms
 {
     partial class ApplicantDataForm
     {
@@ -226,6 +226,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "ApplicantDataForm";
             this.Text = "Данные абитуриента";
+            this.Load += new System.EventHandler(this.ApplicantDataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

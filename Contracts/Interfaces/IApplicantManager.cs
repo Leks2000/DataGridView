@@ -1,7 +1,6 @@
 ﻿using DataGridView.Standart.Contracts.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataGridView.Standart.Contracts.Interfaces

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataGridView.Standart.Contracts.Interfaces
+﻿namespace DataGridView.Standart.Contracts.Models
 {
+    /// <summary>
+    /// Интерфейс для вычисляемых данных о списке <see cref="Applicant"/>
+    /// </summary>
     public interface IApplicantStats
     {
         /// <summary>
