@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Reflection;
 
-namespace Library.Contracts.Models
+namespace DataGridView.Standart.Contracts.Models
 {
     public class Applicant
     {

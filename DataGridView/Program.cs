@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Manager;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Windows.Forms;
 
 namespace DataGridView
@@ -14,9 +13,16 @@ namespace DataGridView
         [STAThread]
         static void Main()
         {
+            var factory = LoggerFactory.Create(builder => builder.AddDebug());
+            var logger = factory.CreateLogger(nameof(DataGrid));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ApplicantData());
+
+            var storage = new MemoryApplicantStorage();
+            var manager = new ApplicantManager(storage, logger);
+
+            Application.Run(new ApplicantDataForm());
         }
     }
 }

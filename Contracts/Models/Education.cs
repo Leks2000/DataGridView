@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Library.Contracts.Models
+namespace DataGridView.Standart.Contracts.Models
 {
     /// <summary>
     /// Варианты формы обучения

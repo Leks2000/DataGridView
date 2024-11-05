@@ -1,6 +1,6 @@
 ﻿namespace DataGridView
 {
-    partial class ApplicationAdd
+    partial class ApplicationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ResultBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.RussianNumeric = new System.Windows.Forms.NumericUpDown();
+            this.MathNumeric = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CSNumeric = new System.Windows.Forms.NumericUpDown();
+            this.EducationBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DateBox = new System.Windows.Forms.DateTimePicker();
+            this.GenderBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.RussianNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MathNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CSNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -70,14 +73,15 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // textBox2
+            // ResultBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(108, 233);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 20);
-            this.textBox2.TabIndex = 48;
+            this.ResultBox.Enabled = false;
+            this.ResultBox.Location = new System.Drawing.Point(108, 233);
+            this.ResultBox.Name = "ResultBox";
+            this.ResultBox.Size = new System.Drawing.Size(203, 20);
+            this.ResultBox.TabIndex = 8;
             // 
             // label10
             // 
@@ -88,19 +92,21 @@
             this.label10.TabIndex = 47;
             this.label10.Text = "Сумма баллов";
             // 
-            // numericUpDown2
+            // RussianNumeric
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(108, 181);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(203, 20);
-            this.numericUpDown2.TabIndex = 42;
+            this.RussianNumeric.Location = new System.Drawing.Point(108, 181);
+            this.RussianNumeric.Name = "RussianNumeric";
+            this.RussianNumeric.Size = new System.Drawing.Size(203, 20);
+            this.RussianNumeric.TabIndex = 6;
+            this.RussianNumeric.ValueChanged += new System.EventHandler(this.resultScores);
             // 
-            // numericUpDown1
+            // MathNumeric
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(108, 155);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(203, 20);
-            this.numericUpDown1.TabIndex = 41;
+            this.MathNumeric.Location = new System.Drawing.Point(108, 155);
+            this.MathNumeric.Name = "MathNumeric";
+            this.MathNumeric.Size = new System.Drawing.Size(203, 20);
+            this.MathNumeric.TabIndex = 5;
+            this.MathNumeric.ValueChanged += new System.EventHandler(this.resultScores);
             // 
             // label9
             // 
@@ -129,22 +135,24 @@
             this.label7.TabIndex = 44;
             this.label7.Text = "Математика";
             // 
-            // numericUpDown3
+            // CSNumeric
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(108, 207);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(203, 20);
-            this.numericUpDown3.TabIndex = 43;
+            this.CSNumeric.Location = new System.Drawing.Point(108, 207);
+            this.CSNumeric.Name = "CSNumeric";
+            this.CSNumeric.Size = new System.Drawing.Size(203, 20);
+            this.CSNumeric.TabIndex = 7;
+            this.CSNumeric.ValueChanged += new System.EventHandler(this.resultScores);
             // 
-            // comboBox2
+            // EducationBox
             // 
-            this.comboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(108, 128);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 21);
-            this.comboBox2.TabIndex = 40;
+            this.EducationBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EducationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EducationBox.FormattingEnabled = true;
+            this.EducationBox.Location = new System.Drawing.Point(108, 128);
+            this.EducationBox.Name = "EducationBox";
+            this.EducationBox.Size = new System.Drawing.Size(203, 21);
+            this.EducationBox.TabIndex = 4;
+            this.EducationBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.materialCB_DrawItem);
             // 
             // label4
             // 
@@ -164,22 +172,23 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "Дата рождения";
             // 
-            // dateTimePicker1
+            // DateBox
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(108, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.DateBox.Location = new System.Drawing.Point(108, 104);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.Size = new System.Drawing.Size(203, 20);
+            this.DateBox.TabIndex = 3;
             // 
-            // comboBox1
+            // GenderBox
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(108, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 21);
-            this.comboBox1.TabIndex = 36;
+            this.GenderBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GenderBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GenderBox.FormattingEnabled = true;
+            this.GenderBox.Location = new System.Drawing.Point(108, 76);
+            this.GenderBox.Name = "GenderBox";
+            this.GenderBox.Size = new System.Drawing.Size(203, 21);
+            this.GenderBox.TabIndex = 2;
+            this.GenderBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.GenderBox_DrawItem);
             // 
             // label2
             // 
@@ -190,12 +199,12 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "Пол";
             // 
-            // textBox1
+            // NameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 34;
+            this.NameBox.Location = new System.Drawing.Point(108, 49);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(203, 20);
+            this.NameBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -216,35 +225,40 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "Данные абитуриента";
             // 
-            // ApplicationAdd
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // ApplicationAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 321);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ResultBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.RussianNumeric);
+            this.Controls.Add(this.MathNumeric);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CSNumeric);
+            this.Controls.Add(this.EducationBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.DateBox);
+            this.Controls.Add(this.GenderBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "ApplicationAdd";
-            this.Text = "ApplicationAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.Name = "ApplicationAddForm";
+            this.Text = "Добавление абитуриента";
+            ((System.ComponentModel.ISupportInitialize)(this.RussianNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MathNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CSNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,22 +268,23 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ResultBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown RussianNumeric;
+        private System.Windows.Forms.NumericUpDown MathNumeric;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown CSNumeric;
+        private System.Windows.Forms.ComboBox EducationBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker DateBox;
+        private System.Windows.Forms.ComboBox GenderBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
