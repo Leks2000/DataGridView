@@ -98,7 +98,7 @@
             this.RussianNumeric.Name = "RussianNumeric";
             this.RussianNumeric.Size = new System.Drawing.Size(203, 20);
             this.RussianNumeric.TabIndex = 6;
-            this.RussianNumeric.ValueChanged += new System.EventHandler(this.resultScores);
+            this.RussianNumeric.ValueChanged += new System.EventHandler(this.UpdateResultScore);
             // 
             // MathNumeric
             // 
@@ -106,7 +106,7 @@
             this.MathNumeric.Name = "MathNumeric";
             this.MathNumeric.Size = new System.Drawing.Size(203, 20);
             this.MathNumeric.TabIndex = 5;
-            this.MathNumeric.ValueChanged += new System.EventHandler(this.resultScores);
+            this.MathNumeric.ValueChanged += new System.EventHandler(this.UpdateResultScore);
             // 
             // label9
             // 
@@ -141,7 +141,7 @@
             this.CSNumeric.Name = "CSNumeric";
             this.CSNumeric.Size = new System.Drawing.Size(203, 20);
             this.CSNumeric.TabIndex = 7;
-            this.CSNumeric.ValueChanged += new System.EventHandler(this.resultScores);
+            this.CSNumeric.ValueChanged += new System.EventHandler(this.UpdateResultScore);
             // 
             // EducationBox
             // 
@@ -229,7 +229,7 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // ApplicationAddForm
+            // ApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "ApplicationAddForm";
+            this.Name = "ApplicationForm";
             this.Text = "Добавление абитуриента";
             ((System.ComponentModel.ISupportInitialize)(this.RussianNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MathNumeric)).EndInit();

@@ -11,13 +11,14 @@ using System.Linq;
 
 namespace DataGridView.Standart.Manager
 {
+    /// <summary>
+    /// Реализация редактирования, добавления, удаления и получения абитуриентов
+    /// Логирование всех операций для отклдаки времени выполнения и ошибок.
+    /// </summary>
     public class ApplicantManager : IApplicantManager
     {
         private readonly IApplicantStorage applicantStorage;
         private readonly ILogger logger;
-        /// <summary>
-        /// Конструктор
-        /// </summary
         public ApplicantManager(IApplicantStorage applicantStorage, ILogger logger)
         {
             this.logger = logger;

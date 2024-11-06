@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace DataGridView.Forms
 {
+    /// <summary>
+    /// Форма с отображением всех абитуриентов
+    /// </summary>
     public partial class ApplicantDataForm : Form
     {
         private readonly IApplicantManager applicantManager;
@@ -22,13 +25,17 @@ namespace DataGridView.Forms
         }
         private async void toolStripBtn_Add_Click(object sender, EventArgs e)
         {
-            var applicantsForm = new ApplicationForm();
+            var applicantsForm = new ApplicationForm(null);
             if (applicantsForm.ShowDialog(this) == DialogResult.OK)
             {
-                await applicantManager.AddAsync(ValidateConvert.ToValidateApplicant(applicantsForm.ValidateApplicant));
+                await applicantManager.AddAsync(ValidateConvert.ToValidateApplicant(applicantsForm.Applicant));
                 await SetStatus();
             }
         }
+        /// <summary>
+        /// Отображение статусных значений
+        /// </summary>
+        /// <returns></returns>
         public async Task SetStatus()
         {
             bindingSource.ResetBindings(false);
@@ -37,7 +44,6 @@ namespace DataGridView.Forms
             toolStripStatusLabel2.Text = $"Ж {result.FemaleCount} /М {result.MaleCount}";
             toolStripStatusLabel3.Text = $"Студенты, набравшие больше 150 баллов в сумме: {result.TotalScoreCount}";
             toolStripStatusLabel4.Text = $"Очный {result.FullTimeCount} / Oчно-Заочный {result.FullTimePartTimeCount} / Заочный {result.СorrespondenceCount}";
-
         }
 
         private async void toolStripBtn_Edit_Click(object sender, EventArgs e)
@@ -48,7 +54,7 @@ namespace DataGridView.Forms
                 var applicantsForm = new ApplicationForm(ValidateConvert.ToApplicant(data));
                 if (applicantsForm.ShowDialog(this) == DialogResult.OK)
                 {
-                    await applicantManager.EditAsync(ValidateConvert.ToValidateApplicant(applicantsForm.ValidateApplicant));
+                    await applicantManager.EditAsync(ValidateConvert.ToValidateApplicant(applicantsForm.Applicant));
                     await SetStatus();
                 }
             }
@@ -75,6 +81,28 @@ namespace DataGridView.Forms
         {
             bindingSource.DataSource = await applicantManager.GetAllAsync();
             await SetStatus();
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView.Columns[e.ColumnIndex].Name == "TotalScoreColumn")
+            {
+                var data = (Applicant)dataGridView.Rows[e.RowIndex].DataBoundItem;
+                data.TotalScore = data.Math + data.Russian + data.ComputerScience;
+                e.Value = data.TotalScore;
+            }
+            if (dataGridView.Columns[e.ColumnIndex].Name == "GenderColumn")
+            {
+                var gender = (Gender)e.Value;
+                if (gender == Gender.Male)
+                {
+                    e.Value = "Мужской";
+                }
+                else
+                {
+                    e.Value = "Женский";
+                }
+            }
         }
     }
 }

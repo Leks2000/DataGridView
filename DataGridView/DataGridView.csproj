@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataGridView.Standart.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridView.Standart.Contracts.1.0.0\lib\netstandard2.0\DataGridView.Standart.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridView.Standart.Memory, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridView.Standart.Memory.1.0.5\lib\netstandard2.0\DataGridView.Standart.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -141,14 +147,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contracts\DataGridView.Standart.Contracts.csproj">
-      <Project>{0d216c25-178c-4acd-b5d8-03b16ab454a8}</Project>
-      <Name>DataGridView.Standart.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataGridView.Memory\DataGridView.Standart.Memory.csproj">
-      <Project>{051D0585-E30A-4F59-A588-58E15B914944}</Project>
-      <Name>DataGridView.Standart.Memory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Manager\DataGridView.Standart.Manager.csproj">
       <Project>{4efa4dfd-50ff-4f7b-bed0-772a2655500a}</Project>
       <Name>DataGridView.Standart.Manager</Name>

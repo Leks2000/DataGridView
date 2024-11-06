@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace DataGridView.Standart.Contracts.Interfaces
 {
+    /// <summary>
+    /// Интерфейс для вычисляемых методов <see cref="Applicant"/>
+    /// </summary>
     public interface IApplicantManager
     {
         /// <summary>
