@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
 
-namespace Library.Contracts.Models
+namespace DataGridView.Standart.Contracts.Models
 {
     /// <summary>
     /// Выбор гендарного пола

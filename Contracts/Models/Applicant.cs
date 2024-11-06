@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Reflection;
 
-namespace Library.Contracts.Models
+namespace DataGridView.Standart.Contracts.Models
 {
+    /// <summary>
+    /// Класс для заполнения данных абитуриента
+    /// </summary>
     public class Applicant
     {
         public Guid Id { get; set; }
@@ -12,7 +14,7 @@ namespace Library.Contracts.Models
 
         public string Name { get; set; }
         /// <summary>
-        /// <inheritdoc cref="Gender"/>
+        /// <inheritdoc cref="Models.Gender"/>
         /// </summary>
         public Gender Gender { get; set; }
 
@@ -23,7 +25,7 @@ namespace Library.Contracts.Models
         public DateTime Birthday { get; set; }
 
         /// <summary>
-        /// <inheritdoc cref="Education"/>
+        /// <inheritdoc cref="Models.Education"/>
         /// </summary>
 
         public Education Education { get; set; }
