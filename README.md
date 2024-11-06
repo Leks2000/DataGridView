@@ -1,7 +1,7 @@
 # DataGridView - Реестр абитуриентов.
 (Вариант 2)
 
--  Создание Nuget пакета 
+-  Создание Nuget пакета - DataGridView.Standart.Memory
 -  Логирование - Manager
 -  Халле Александр. ИП-21-3.
 
