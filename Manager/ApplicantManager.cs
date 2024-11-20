@@ -44,7 +44,7 @@ namespace DataGridView.Standart.Manager
                     applicant.Id,
                     stopwatch.ElapsedMilliseconds,
                     ex.Message,
-                    applicant.Name
+                    applicant
                     );
                 return null;
             }
@@ -55,7 +55,7 @@ namespace DataGridView.Standart.Manager
                 nameof(IApplicantManager.AddAsync),
                 applicant.Id,
                 stopwatch.ElapsedMilliseconds,
-                applicant.Name
+                applicant
                 );
             return result;
         }
@@ -105,7 +105,7 @@ namespace DataGridView.Standart.Manager
                          applicant.Id,
                          stopwatch.ElapsedMilliseconds,
                          ex.Message,
-                         applicant.Name
+                         applicant
                          );
             }
 
@@ -113,7 +113,7 @@ namespace DataGridView.Standart.Manager
             LoggingHelper.LogInfoApplicant(logger, nameof(IApplicantManager.EditAsync),
                     applicant.Id,
                     stopwatch.ElapsedMilliseconds,
-                    applicant.Name
+                    applicant
                 );
         }
         /// <inheritdoc cref="IApplicantManager.GetAllAsync()"/>
