@@ -1,49 +1,44 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DataGridView.Standart.Contracts.Models;
+using Microsoft.Extensions.Logging;
 using System;
+using static System.Collections.Specialized.BitVector32;
 
 namespace DataGridView.Standart.Manager
 {
     public class LoggingHelper
     {
-        private const string InfoLoggerTemplateApplicant =
-           "Заполнено {0} для абитуриента с идентификатором {1} и именем \"{2}\", прошло время: {3} мс; дата: {4}";
-        private const string ErrorLoggerTemplateApplicant =
-            "Не удалось заполнить {0} для абитуриента с идентификатором {1} и именем \"{2}\", прошло время: {3} мс; дата: {4}; сообщение об ошибке: {5}";
-        private const string ErrorLoggerTemplateCommon =
-            "Не удалось завершить {0}, дата: {1}; сообщение об ошибке: {2}";
-
+  
         /// <summary>
         /// Залогировать информацию о действии с абитуриентом
         /// </summary>
-        public static void LogErrorApplicant(ILogger logger, string actionName, Guid applicantId, long msElapsed, string errorMessage, string applicantName = null)
+        public static void LogErrorApplicant(ILogger logger, string actionName, Guid applicantId, long msElapsed, string errorMessage, Applicant applicant = null)
         {
             logger.LogError(
-                string.Format(
-                ErrorLoggerTemplateApplicant,
+                "Действие { ACTION} с идентификатором { ID} выполнено за: {Milliseconds} мс; дата: {DATE}; " +
+                "сообщение об ошибке: {ERROR}",
                 actionName,
                 applicantId,
-                applicantName ?? "-",
+                applicant,
                 msElapsed,
                 DateTime.Now,
                 errorMessage
-                )
                 );
         }
 
         /// <summary>
         /// Логирование ошибки при действии с абитуриентом
         /// </summary>
-        public static void LogInfoApplicant(ILogger logger, string actionName, Guid applicantId, long msElapsed, string applicantName = null)
+        public static void LogInfoApplicant(ILogger logger, string actionName, Guid applicantId, long msElapsed, Applicant applicant = null)
         {
             logger.LogInformation(
-                string.Format(
-                InfoLoggerTemplateApplicant,
+                "Действие {ACTION} с идентификатором {ID}," +
+                " выполнено за: {Milliseconds} мс; дата: {DATE}; " +
+                "сообщение об ошибке: {ERROR}",
                 actionName,
                 applicantId,
-                applicantName ?? "-",
                 msElapsed,
-                DateTime.Now
-                )
+                DateTime.Now,
+                applicant
                 );
         }
 
@@ -52,12 +47,11 @@ namespace DataGridView.Standart.Manager
         /// </summary>
         public static void LogError(ILogger logger, string actionName, string errorMessage)
         {
-            logger.LogError(string.Format(
-            ErrorLoggerTemplateCommon,
+            logger.LogError(
+            "Не удалось завершить Действие {ACTION}, дата: {DATE}; сообщение об ошибке: {ERROR}",
             actionName,
             DateTime.Now,
             errorMessage
-            )
             );
         }
     }
