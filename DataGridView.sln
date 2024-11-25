@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView.Standart.Memor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView.Standart.Manager.Tests", "DataGridView.Standart.Manager.Tests\DataGridView.Standart.Manager.Tests.csproj", "{54DDA24A-B9CE-4D1A-9CD3-A90E4DAA11A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView.Database", "DataGridView.Database\DataGridView.Database.csproj", "{AD35BF21-0EEE-402D-AA26-4D7CD6EC7D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{54DDA24A-B9CE-4D1A-9CD3-A90E4DAA11A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DDA24A-B9CE-4D1A-9CD3-A90E4DAA11A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DDA24A-B9CE-4D1A-9CD3-A90E4DAA11A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD35BF21-0EEE-402D-AA26-4D7CD6EC7D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD35BF21-0EEE-402D-AA26-4D7CD6EC7D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD35BF21-0EEE-402D-AA26-4D7CD6EC7D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD35BF21-0EEE-402D-AA26-4D7CD6EC7D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
