@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>DataGridView</RootNamespace>
     <AssemblyName>DataGridView</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -156,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,6 +174,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataGridView.Database\DataGridView.Database.csproj">
+      <Project>{ad35bf21-0eee-402d-aa26-4d7cd6ec7d39}</Project>
+      <Name>DataGridView.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Manager\DataGridView.Standart.Manager.csproj">
       <Project>{4efa4dfd-50ff-4f7b-bed0-772a2655500a}</Project>
       <Name>DataGridView.Standart.Manager</Name>

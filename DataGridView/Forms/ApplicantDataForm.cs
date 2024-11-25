@@ -29,7 +29,7 @@ namespace DataGridView.Forms
             if (applicantsForm.ShowDialog(this) == DialogResult.OK)
             {
                 await applicantManager.AddAsync(ValidateConvert.ToValidateApplicant(applicantsForm.Applicant));
-                await SetStatus();
+                GetDataChanges();
             }
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace DataGridView.Forms
                 if (applicantsForm.ShowDialog(this) == DialogResult.OK)
                 {
                     await applicantManager.EditAsync(ValidateConvert.ToValidateApplicant(applicantsForm.Applicant));
-                    await SetStatus();
+                    GetDataChanges();
                 }
             }
         }
@@ -72,15 +72,18 @@ namespace DataGridView.Forms
                 if (MessageBox.Show($"Вы действительно хотите удалить абитуриента '{data.Name}'?", "Удаление записи", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     await applicantManager.DeleteAsync(data.Id);
-                    await SetStatus();
+                    GetDataChanges();
                 }
             }
         }
-
-        private async void ApplicantDataForm_Load(object sender, EventArgs e)
+        private async void GetDataChanges()
         {
             bindingSource.DataSource = await applicantManager.GetAllAsync();
             await SetStatus();
+        }
+        private void ApplicantDataForm_Load(object sender, EventArgs e)
+        {
+            GetDataChanges();
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
